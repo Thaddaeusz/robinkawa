@@ -7,3 +7,9 @@ Thumbs.db
 node_modules/
 
 .vercel
+
+# Local design references (do not ship)
+ref-imgs/
+ref-home.html
+ref-custom.css
+ref-site.css
