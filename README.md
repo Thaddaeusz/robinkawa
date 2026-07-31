@@ -11,7 +11,7 @@ Cute Chiikawa-style official site for **Robinkawa** on **Robinhood Chain**.
 ## Links
 
 - **GitHub:** https://github.com/Thaddaeusz/robinkawa
-- **Live (Vercel):** (set after deploy)
+- **Live (Vercel):** https://robinkawa.vercel.app
 
 ## Local
 

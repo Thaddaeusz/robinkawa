@@ -4,514 +4,560 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>robinkawa official</title>
-  <meta name="description" content="Something small and cute. Robinkawa Official — the cutest little friend on Robinhood Chain. Launching on Pons." />
+  <meta name="description" content="Something small and cute. Robinkawa Official — authentic source for all things Robinkawa on Robinhood Chain. Launching on Pons." />
   <meta property="og:title" content="robinkawa official" />
-  <meta property="og:description" content="Something small and cute. Robinkawa on Robinhood Chain — launching on Pons." />
+  <meta property="og:description" content="Something small and cute. Robinkawa on Robinhood Chain." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo-mascot.jpg" />
-  <link rel="icon" href="assets/logo-mascot.jpg" />
+  <meta property="og:image" content="assets/v2/mascot.jpg" />
+  <link rel="icon" href="assets/v2/mascot.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Nunito:wght@600;700;800&family=Sniglet:wght@400;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --pink: #fac5ce;
-      --pink-deep: #f4a8b5;
-      --pink-soft: #ffe4ea;
-      --cream: #fff7f4;
-      --ink: #1a1a1a;
-      --muted: #5c4a4e;
+      --pink-2: #f7b4c0;
+      --pink-soft: #ffd6de;
+      --ink: #111;
+      --muted: #4a3a3e;
       --green: #00c805;
-      --green-deep: #00a004;
-      --green-soft: #d8ffd9;
-      --card: #fff;
+      --green-deep: #009a04;
       --line: #ebddec;
-      --shadow: 0 10px 28px rgba(120, 60, 80, 0.12);
-      --radius: 22px;
+      --black: #0a0a0a;
+      --header-h: 64px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Nunito', system-ui, sans-serif;
-      color: var(--ink);
       background: var(--pink);
-      line-height: 1.55;
-      min-height: 100%;
+      color: var(--ink);
+      line-height: 1.5;
+      overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; display: block; user-select: none; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; border: none; cursor: pointer; }
+    button { font: inherit; border: 0; background: none; cursor: pointer; }
 
-    /* ----- Header (Chiikawa-style sticky bar) ----- */
-    .topbar {
+    /* ========== HEADER (Chiikawa: centered lowercase nav) ========== */
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(250, 197, 206, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 3px solid var(--line);
+      z-index: 100;
+      height: var(--header-h);
+      background: var(--pink);
+      border-bottom: 1px solid rgba(0,0,0,.06);
     }
-    .topbar-inner {
-      max-width: 1120px;
+    .site-header-inner {
+      max-width: 1100px;
+      height: 100%;
       margin: 0 auto;
-      padding: 12px 20px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand {
+      padding: 0 18px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      justify-self: start;
-    }
-    .brand img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      object-fit: cover;
-      background: var(--cream);
-    }
-    .brand span {
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: 0.02em;
-      text-transform: lowercase;
-    }
-    .nav {
-      display: flex;
-      gap: 6px 18px;
       justify-content: center;
+      position: relative;
+    }
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 3vw, 34px);
       flex-wrap: wrap;
+      justify-content: center;
     }
-    .nav a {
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
+    .nav-main a {
+      font-family: 'Sniglet', 'Mochiy Pop One', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(.85rem, 1.6vw, 1rem);
       text-transform: lowercase;
-      padding: 6px 4px;
-      color: var(--ink);
+      letter-spacing: .02em;
+      color: #000;
       transition: color .15s ease;
+      padding: 6px 2px;
     }
-    .nav a:hover { color: #fff; }
-    .actions {
+    .nav-main a:hover { color: #fff; }
+    .header-cta {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       gap: 8px;
-      justify-self: end;
       align-items: center;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
+      gap: 6px;
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      font-size: .88rem;
+      padding: 9px 16px;
       border-radius: 999px;
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: transform .12s ease, filter .12s ease, background .12s ease;
+      border: 2.5px solid #111;
+      transition: transform .12s ease, background .12s ease;
       white-space: nowrap;
     }
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
+    .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(1px); }
     .btn-green {
       background: var(--green);
-      color: #06240a;
+      color: #05240a;
       box-shadow: 0 3px 0 var(--green-deep);
     }
-    .btn-outline {
-      background: #fff;
-      border: 2px solid var(--ink);
-      color: var(--ink);
-    }
-    .btn-ghost {
-      background: transparent;
-      border: 2px solid rgba(0,0,0,.15);
-    }
-    .menu-btn {
+    .btn-white { background: #fff; color: #111; }
+    .btn-black { background: #111; color: #fff; }
+    .burger {
       display: none;
-      width: 44px;
-      height: 40px;
-      border-radius: 12px;
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 38px;
+      border: 2px solid #111;
+      border-radius: 10px;
       background: #fff;
-      border: 2px solid var(--ink);
     }
-    .menu-btn span {
+    .burger i {
       display: block;
       width: 18px;
-      height: 2px;
+      height: 2.5px;
+      background: #111;
       margin: 4px auto;
-      background: var(--ink);
       border-radius: 2px;
     }
 
-    /* ----- Sections ----- */
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px;
+    /* Mobile drawer */
+    .drawer {
+      display: none;
+      background: rgba(255,255,255,.72);
+      border-bottom: 2px solid var(--line);
+      padding: 10px 16px 14px;
     }
-    section { scroll-margin-top: 84px; }
-
-    .hero {
-      padding: 28px 0 10px;
-      text-align: center;
-    }
-    .hero-logo {
-      width: min(280px, 62vw);
-      margin: 0 auto 8px;
-      border-radius: 28px;
-      border: 4px solid #fff;
-      box-shadow: var(--shadow);
-      background: var(--cream);
-    }
-    .hero h1 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: clamp(2.2rem, 7vw, 3.6rem);
-      font-weight: 700;
-      letter-spacing: 0.01em;
+    .drawer.open { display: grid; gap: 6px; }
+    .drawer a {
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
       text-transform: lowercase;
-      margin: 12px 0 6px;
+      padding: 12px 14px;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px solid rgba(0,0,0,.08);
     }
-    .hero .tag {
-      font-family: 'Fredoka', sans-serif;
-      font-size: clamp(1.05rem, 3vw, 1.35rem);
-      color: var(--muted);
-      margin-bottom: 18px;
+
+    /* ========== SECTIONS ========== */
+    section { scroll-margin-top: calc(var(--header-h) + 8px); }
+    .band-pink {
+      background: var(--pink);
+      padding: clamp(18px, 4vw, 40px) 16px;
     }
-    .hero-banner {
-      width: min(920px, 100%);
-      margin: 10px auto 0;
+    .band-black {
+      background: var(--black);
+      color: #fff;
+      padding: clamp(18px, 4vw, 36px) 16px;
+    }
+    .inner {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .inner-wide {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .center { text-align: center; }
+
+    /* Hero */
+    .hero {
+      padding: clamp(20px, 5vw, 48px) 16px 8px;
+    }
+    .hero-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-mascot {
+      width: min(260px, 58vw);
       border-radius: 28px;
-      border: 4px solid #fff;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      background: var(--pink-soft);
+      /* blends into pink page like original cutouts */
     }
-    .hero-banner img {
+    .hero-wordmark {
+      width: min(520px, 88vw);
+      margin: 6px auto 0;
+      background: #000;
+      border-radius: 18px;
+      padding: 10px 18px;
+    }
+    .hero-wordmark img {
       width: 100%;
       height: auto;
-      object-fit: cover;
     }
-    .ticker-row {
+    .tagline {
+      margin-top: 16px;
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+      color: #111;
+    }
+    .tagline em {
+      font-style: normal;
+      background: #fff;
+      border: 2.5px solid #111;
+      border-radius: 999px;
+      padding: 6px 14px;
+      display: inline-block;
+      box-shadow: 3px 3px 0 rgba(0,0,0,.12);
+    }
+
+    /* Meta strip — crypto info without breaking cute vibe */
+    .meta-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       justify-content: center;
-      margin-top: 22px;
+      margin: 18px auto 8px;
+      max-width: 720px;
     }
-    .pill {
+    .chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background: #fff;
-      border: 2px solid var(--ink);
+      border: 2.5px solid #111;
       border-radius: 999px;
-      padding: 10px 16px;
+      padding: 8px 14px;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: .86rem;
+      box-shadow: 3px 3px 0 rgba(0,0,0,.1);
+    }
+    .chip b { color: var(--green-deep); }
+    .chip .k {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #777;
+    }
+    .chip.ca b { color: #c2410c; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    /* Full-bleed art blocks */
+    .art-block {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .art-block img {
+      width: min(920px, 100%);
+      height: auto;
+    }
+    .art-block.full img {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* Black band with trio */
+    .band-black .art-block img {
+      width: min(1000px, 100%);
+    }
+
+    /* Section titles (hand-drawn feel) */
+    .sec-title {
+      font-family: 'Sniglet', 'Mochiy Pop One', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.7rem, 5vw, 2.6rem);
+      text-align: center;
+      text-transform: lowercase;
+      letter-spacing: .02em;
+      margin: 8px 0 6px;
+    }
+    .sec-sub {
+      text-align: center;
+      font-weight: 800;
+      color: var(--muted);
+      max-width: 42ch;
+      margin: 0 auto 22px;
+      font-size: .98rem;
+    }
+    .band-black .sec-sub { color: rgba(255,255,255,.72); }
+
+    /* Character gallery — 3×2 circle buttons like original */
+    .char-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(14px, 3vw, 28px);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 8px 4px 12px;
+    }
+    .char-item {
+      text-align: center;
+      transition: transform .15s ease;
+    }
+    .char-item:hover { transform: translateY(-5px) scale(1.03); }
+    .char-item a { display: block; }
+    .char-bubble {
+      width: min(100%, 200px);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #111;
+      background: #fff;
+      box-shadow: 4px 4px 0 rgba(0,0,0,.12);
+    }
+    .char-bubble img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .char-item h3 {
+      margin-top: 10px;
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      font-size: clamp(.95rem, 2.2vw, 1.15rem);
+      text-transform: lowercase;
+    }
+    .char-item p {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      padding: 0 4px;
+    }
+
+    /* Welcome / about copy */
+    .copy-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.55);
+      border: 3px solid #111;
+      border-radius: 24px;
+      padding: clamp(18px, 3vw, 28px);
+      box-shadow: 5px 5px 0 rgba(0,0,0,.1);
+    }
+    .copy-card p {
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .copy-card p:last-child { margin-bottom: 0; }
+    .copy-card strong { color: #111; }
+
+    /* Q&A accordion */
+    .qa {
+      max-width: 680px;
+      margin: 0 auto;
+      display: grid;
+      gap: 10px;
+    }
+    .qa details {
+      background: #fff;
+      border: 2.5px solid #111;
+      border-radius: 16px;
+      padding: 12px 16px;
       box-shadow: 3px 3px 0 rgba(0,0,0,.08);
     }
-    .pill .label {
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .pill.ca .value { color: #b45309; }
-    .pill.chain .value { color: var(--green-deep); }
-
-    .panel {
-      margin: 34px auto;
-      background: rgba(255,255,255,.55);
-      border: 3px solid var(--line);
-      border-radius: 28px;
-      padding: clamp(22px, 4vw, 36px);
-      box-shadow: var(--shadow);
-    }
-    .eyebrow {
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green-deep);
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    .panel h2 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-      text-align: center;
-      text-transform: lowercase;
-      margin-bottom: 10px;
-    }
-    .panel .lead {
-      text-align: center;
-      max-width: 52ch;
-      margin: 0 auto 22px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    /* Welcome */
-    .welcome-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .welcome-copy p {
-      margin: 0 0 14px;
-      font-weight: 700;
-      color: var(--muted);
-    }
-    .welcome-copy strong { color: var(--ink); }
-    .welcome-art {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 3px solid #fff;
-      box-shadow: var(--shadow);
-      background: var(--cream);
-    }
-
-    /* Characters */
-    .char-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .char-card {
-      background: #fff;
-      border-radius: 22px;
-      border: 3px solid var(--line);
-      overflow: hidden;
-      text-align: center;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 6px 0 rgba(0,0,0,.04);
-    }
-    .char-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 24px rgba(120, 60, 80, 0.14);
-    }
-    .char-card img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      background: var(--pink-soft);
-    }
-    .char-card .meta {
-      padding: 12px 10px 16px;
-    }
-    .char-card h3 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.15rem;
-      text-transform: lowercase;
-      margin-bottom: 4px;
-    }
-    .char-card p {
-      font-size: 0.86rem;
-      color: var(--muted);
-      font-weight: 700;
-      padding: 0 6px;
-    }
-
-    /* Q&A */
-    .qa {
-      display: grid;
-      gap: 12px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    details.qa-item {
-      background: #fff;
-      border: 2px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-    }
-    details.qa-item summary {
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
+    .qa summary {
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
       cursor: pointer;
       list-style: none;
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
+      align-items: center;
     }
-    details.qa-item summary::-webkit-details-marker { display: none; }
-    details.qa-item summary::after {
+    .qa summary::-webkit-details-marker { display: none; }
+    .qa summary::after {
       content: "+";
-      color: var(--green-deep);
-      font-weight: 700;
-    }
-    details.qa-item[open] summary::after { content: "–"; }
-    details.qa-item p {
-      margin-top: 10px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    /* Social / Launch */
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .social-card {
-      background: #fff;
-      border: 3px solid var(--ink);
-      border-radius: 20px;
-      padding: 22px 16px;
-      text-align: center;
-      box-shadow: 4px 4px 0 rgba(0,0,0,.08);
-      transition: transform .12s ease;
-    }
-    .social-card:hover { transform: translateY(-3px); }
-    .social-card .ico {
-      width: 54px;
-      height: 54px;
-      margin: 0 auto 12px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--pink-soft);
-      font-size: 1.4rem;
-    }
-    .social-card h3 {
-      font-family: 'Fredoka', sans-serif;
-      text-transform: lowercase;
-      margin-bottom: 6px;
-    }
-    .social-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .social-card.disabled {
-      opacity: 0.72;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-    .social-card.disabled:hover { transform: none; }
-
-    .cta-band {
-      margin-top: 22px;
-      background: linear-gradient(180deg, var(--green-soft), #fff);
-      border: 3px solid var(--green);
-      border-radius: 22px;
-      padding: 22px 18px;
-      text-align: center;
-    }
-    .cta-band h3 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-    .cta-band p {
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .cta-band .btn { min-width: 180px; }
-
-    /* Footer */
-    footer {
-      padding: 28px 20px 48px;
-      text-align: center;
-    }
-    footer .foot-art {
-      width: min(220px, 50vw);
-      margin: 0 auto 16px;
-      border-radius: 24px;
-      border: 3px solid #fff;
-      box-shadow: var(--shadow);
-    }
-    footer .foot-title {
-      font-family: 'Fredoka', sans-serif;
       font-size: 1.2rem;
-      text-transform: lowercase;
-      margin-bottom: 8px;
+      line-height: 1;
     }
-    footer .links {
+    .qa details[open] summary::after { content: "–"; }
+    .qa details p {
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .qa a { color: var(--green-deep); text-decoration: underline; }
+
+    /* Social row */
+    .social-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 18px;
+      gap: 14px;
       justify-content: center;
-      margin: 14px 0;
-      font-weight: 800;
-      font-size: 0.9rem;
+      margin-top: 8px;
     }
-    footer .links a:hover { color: #fff; }
-    footer .fine {
+    .social-btn {
+      width: min(200px, 42vw);
+      min-height: 120px;
+      border: 3px solid #111;
+      border-radius: 22px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      box-shadow: 4px 4px 0 rgba(0,0,0,.12);
+      transition: transform .12s ease;
+      padding: 16px 12px;
+    }
+    .social-btn:hover { transform: translateY(-4px); }
+    .social-btn .ico {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2.5px solid #111;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: var(--pink-soft);
+    }
+    .social-btn.pons .ico { background: var(--green); }
+    .social-btn.x .ico { background: #111; color: #fff; }
+    .social-btn.disabled {
+      opacity: .65;
+      pointer-events: none;
+      box-shadow: none;
+    }
+    .social-btn small {
+      font-family: 'Nunito', sans-serif;
+      font-size: .75rem;
       color: var(--muted);
-      font-size: 0.82rem;
       font-weight: 700;
-      max-width: 50ch;
-      margin: 0 auto;
     }
 
-    /* Mobile menu */
-    .mobile-nav {
-      display: none;
-      border-top: 2px solid var(--line);
-      padding: 12px 20px 16px;
-      background: rgba(255,255,255,.55);
+    /* Launch CTA band */
+    .launch-cta {
+      margin: 28px auto 0;
+      max-width: 640px;
+      background: #111;
+      color: #fff;
+      border-radius: 24px;
+      padding: 22px 18px;
+      text-align: center;
+      border: 3px solid #111;
+      box-shadow: 0 0 0 4px var(--green);
     }
-    .mobile-nav.open { display: grid; gap: 8px; }
-    .mobile-nav a {
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
-      padding: 10px 12px;
-      border-radius: 12px;
+    .launch-cta h3 {
+      font-family: 'Sniglet', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+    .launch-cta p {
+      color: rgba(255,255,255,.7);
+      font-weight: 700;
+      margin-bottom: 14px;
+      font-size: .92rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--pink);
+      padding: 10px 16px 40px;
+      text-align: center;
+    }
+    .site-footer .foot-mascot {
+      width: min(160px, 40vw);
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      border: 3px solid #111;
       background: #fff;
+    }
+    .site-footer .foot-brand {
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
       text-transform: lowercase;
     }
-
-    @media (max-width: 900px) {
-      .topbar-inner {
-        grid-template-columns: 1fr auto;
-      }
-      .nav { display: none; }
-      .menu-btn { display: block; }
-      .actions .btn-outline { display: none; }
-      .welcome-grid { grid-template-columns: 1fr; }
-      .char-grid { grid-template-columns: repeat(2, 1fr); }
-      .social-grid { grid-template-columns: 1fr; }
+    .site-footer .foot-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      justify-content: center;
+      margin: 12px 0;
+      font-family: 'Sniglet', sans-serif;
+      font-weight: 800;
+      text-transform: lowercase;
+      font-size: .92rem;
     }
-    @media (max-width: 480px) {
-      .char-grid { grid-template-columns: 1fr; }
-      .actions .btn { padding: 9px 12px; font-size: 0.85rem; }
+    .site-footer .foot-links a:hover { color: #fff; }
+    .site-footer .fine {
+      max-width: 48ch;
+      margin: 0 auto;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    /* Sticky bottom buy bar (mobile-friendly) */
+    .buybar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 90;
+      background: rgba(250, 197, 206, .94);
+      backdrop-filter: blur(8px);
+      border-top: 2.5px solid #111;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .buybar .hint {
+      font-weight: 800;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    body { padding-bottom: 72px; }
+
+    @media (max-width: 820px) {
+      .nav-main { display: none; }
+      .burger { display: block; }
+      .header-cta .btn-white { display: none; }
+      .header-cta { right: 12px; }
+      .char-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .char-gallery { gap: 12px; }
+      .char-item p { display: none; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#home">
-        <img src="assets/logo-mascot.jpg" alt="Robinkawa" />
-        <span>robinkawa</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <button class="burger" id="burger" type="button" aria-label="Menu"><i></i><i></i><i></i></button>
+      <nav class="nav-main" aria-label="Primary">
         <a href="#home">home</a>
         <a href="#welcome">welcome</a>
         <a href="#characters">characters</a>
         <a href="#about">about</a>
         <a href="#social">social</a>
       </nav>
-      <div class="actions">
-        <a class="btn btn-outline" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">pons</a>
-        <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">buy on pons</a>
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <div class="header-cta">
+        <a class="btn btn-white" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">pons</a>
+        <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">buy</a>
       </div>
     </div>
-    <div class="mobile-nav" id="mobileNav">
+    <div class="drawer" id="drawer">
       <a href="#home">home</a>
       <a href="#welcome">welcome</a>
       <a href="#characters">characters</a>
@@ -521,195 +567,194 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero wrap" id="home">
-      <img class="hero-logo" src="assets/logo-mascot.jpg" alt="Robinkawa mascot" />
-      <h1>robinkawa official</h1>
-      <p class="tag">“Something small and cute.”</p>
-      <div class="hero-banner">
-        <img src="assets/hero.jpg" alt="Robinkawa friends on Robinhood Chain" />
-      </div>
-      <div class="ticker-row">
-        <div class="pill">
-          <span class="label">Ticker</span>
-          <span class="value">$ROBINKAWA</span>
-        </div>
-        <div class="pill chain">
-          <span class="label">Chain</span>
-          <span class="value">Robinhood Chain</span>
-        </div>
-        <div class="pill ca">
-          <span class="label">CA</span>
-          <span class="value" id="caValue">Coming Soon</span>
+  <!-- HOME / HERO -->
+  <section class="band-pink hero" id="home">
+    <div class="inner center">
+      <div class="hero-logo-wrap">
+        <img class="hero-mascot" src="assets/v2/mascot.jpg" alt="Robinkawa" width="260" height="260" />
+        <div class="hero-wordmark">
+          <img src="assets/v2/wordmark.jpg" alt="ROBINKAWA" />
         </div>
       </div>
-      <div class="ticker-row" style="margin-top:14px">
-        <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">Launch / Trade on Pons ↗</a>
-        <a class="btn btn-outline" href="#about">learn more</a>
-      </div>
-    </section>
+      <p class="tagline"><em>“Something small and cute.”</em></p>
 
-    <section class="wrap" id="welcome">
-      <div class="panel">
-        <div class="eyebrow">welcome</div>
-        <h2>meet robinkawa</h2>
-        <p class="lead">A tiny soft friend born on Robinhood Chain — made for retail hearts, green feather energy, and pure cuteness.</p>
-        <div class="welcome-grid">
-          <div class="welcome-copy">
-            <p><strong>Robinkawa</strong> is something small and cute: a little hooded companion hopping across the Robinhood Chain with friends from the block.</p>
-            <p>This is the official home for the Robinkawa universe — characters, lore, and launch links. Trade live on <strong>Pons</strong>, the flagship launchpad of Robinhood Chain.</p>
-            <p>Contract address is still warming up: <strong>Coming Soon</strong>. Follow updates once X goes live.</p>
-            <div class="ticker-row" style="justify-content:flex-start;margin-top:18px">
-              <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">open pons</a>
-              <span class="pill"><span class="label">status</span><span class="value">pre-launch</span></span>
-            </div>
-          </div>
-          <div class="welcome-art">
-            <img src="assets/badge.jpg" alt="Robinkawa official badge" />
-          </div>
-        </div>
+      <div class="meta-strip">
+        <span class="chip"><span class="k">ticker</span> <b>$ROBINKAWA</b></span>
+        <span class="chip"><span class="k">chain</span> <b>Robinhood Chain</b></span>
+        <span class="chip ca"><span class="k">ca</span> <b>Coming Soon</b></span>
       </div>
-    </section>
 
-    <section class="wrap" id="characters">
-      <div class="panel">
-        <div class="eyebrow">characters</div>
-        <h2>friends of the hood</h2>
-        <p class="lead">A soft little cast — all original cuties with Robinhood green accents.</p>
-        <div class="char-grid">
-          <article class="char-card">
-            <img src="assets/characters/c3.jpg" alt="Robinkawa" />
-            <div class="meta">
-              <h3>robinkawa</h3>
-              <p>The main soft blob. Green feather hood. Always a little nervous, always brave.</p>
-            </div>
-          </article>
-          <article class="char-card">
-            <img src="assets/characters/c4.jpg" alt="Mintchi" />
-            <div class="meta">
-              <h3>mintchi</h3>
-              <p>Calm blue friend. Keeps the charts chill and the snacks ready.</p>
-            </div>
-          </article>
-          <article class="char-card">
-            <img src="assets/characters/c1.jpg" alt="Bunhood" />
-            <div class="meta">
-              <h3>bunhood</h3>
-              <p>Pink bunny energy. Loves green bows and sudden pumps.</p>
-            </div>
-          </article>
-          <article class="char-card">
-            <img src="assets/characters/c2.jpg" alt="Leafomo" />
-            <div class="meta">
-              <h3>leafomo</h3>
-              <p>Purple fluff with a lucky leaf. Quiet, lucky, slightly dramatic.</p>
-            </div>
-          </article>
-          <article class="char-card">
-            <img src="assets/characters/c6.jpg" alt="Dumpli" />
-            <div class="meta">
-              <h3>dumpli</h3>
-              <p>Orange dumpling. Lives for warm fills and warm hearts.</p>
-            </div>
-          </article>
-          <article class="char-card">
-            <img src="assets/characters/c5.jpg" alt="Otterfeather" />
-            <div class="meta">
-              <h3>otterfeather</h3>
-              <p>Grey soft otter. Collects feathers and good vibes only.</p>
-            </div>
-          </article>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">Launch on Pons ↗</a>
+        <a class="btn btn-white" href="#characters">meet friends</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="wrap" id="about">
-      <div class="panel">
-        <div class="eyebrow">about</div>
-        <h2>robinkawa q&amp;a</h2>
-        <p class="lead">Everything small. Everything cute. Built for Robinhood Chain.</p>
-        <div class="qa">
-          <details class="qa-item" open>
-            <summary>Am I saying it right?</summary>
-            <p><strong>Ro-bin-ka-wa</strong> — like “Robin” + “kawa” (cute / river vibe). Soft and round, just like the character.</p>
-          </details>
-          <details class="qa-item">
-            <summary>What kind of creature is Robinkawa?</summary>
-            <p>Robinkawa is something small and cute — a soft little hooded friend of the Robinhood Chain, not quite animal, not quite dumpling, pure kawaii energy.</p>
-          </details>
-          <details class="qa-item">
-            <summary>Where does Robinkawa live?</summary>
-            <p>On <strong>Robinhood Chain</strong>, launching through <strong>Pons</strong> — the community launchpad of the ecosystem.</p>
-          </details>
-          <details class="qa-item">
-            <summary>What is the ticker?</summary>
-            <p><strong>$ROBINKAWA</strong>. Contract address is <strong>Coming Soon</strong> and will be posted here the moment it is live.</p>
-          </details>
-          <details class="qa-item">
-            <summary>Where do I buy?</summary>
-            <p>On <a href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener"><strong>Pons Launchpad</strong></a> — open the link, connect your wallet, and trade when $ROBINKAWA is live.</p>
-          </details>
-          <details class="qa-item">
-            <summary>Is there an X / Twitter?</summary>
-            <p>Coming soon — drop the handle and we’ll wire it into the social bar instantly.</p>
-          </details>
-        </div>
+  <!-- TRIO WAVE (black band like original) -->
+  <section class="band-black" id="welcome" aria-label="Welcome">
+    <div class="art-block full">
+      <img src="assets/v2/trio-wave.jpg" alt="Robinkawa friends peaking over the hill" />
+    </div>
+    <div class="inner center" style="padding-top: 18px;">
+      <h2 class="sec-title" style="color:#fff;">welcome</h2>
+      <p class="sec-sub">A tiny soft friend born for Robinhood Chain — green feather, pink cheeks, pure retail cuteness.</p>
+      <div class="copy-card" style="text-align:left;">
+        <p><strong>Robinkawa Official</strong> is the home for all things Robinkawa, Mintchi, Bunhood, and the rest of the hood.</p>
+        <p>Live trading happens on <strong>Pons</strong> — the launchpad of Robinhood Chain. Contract address is still warming up: <strong>Coming Soon</strong>.</p>
+        <p>X / Twitter handle lands next — drop it and we pin it here.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="wrap" id="social">
-      <div class="panel">
-        <div class="eyebrow">social</div>
-        <h2>stay close</h2>
-        <p class="lead">Links for launch day. X handle landing shortly.</p>
-        <div class="social-grid">
-          <a class="social-card" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">
-            <div class="ico">🚀</div>
-            <h3>pons</h3>
-            <p>Launchpad on Robinhood Chain. Trade $ROBINKAWA when live.</p>
-            <span class="btn btn-green">open pons</span>
+  <!-- MEET / CAST -->
+  <section class="band-pink" id="characters">
+    <div class="inner-wide">
+      <h2 class="sec-title">characters</h2>
+      <p class="sec-sub">Tap a friend. All original cuties with Robinhood green accents.</p>
+
+      <div class="char-gallery">
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/robinkawa.jpg" alt="Robinkawa" /></div>
+            <h3>robinkawa</h3>
+            <p>main soft blob · green feather</p>
           </a>
-          <div class="social-card disabled" aria-disabled="true" title="Waiting for X handle">
-            <div class="ico">𝕏</div>
-            <h3>x (twitter)</h3>
-            <p>Handle not set yet — send it and we plug it in.</p>
-            <span class="btn btn-ghost">coming soon</span>
-          </div>
-          <div class="social-card disabled" aria-disabled="true">
-            <div class="ico">📄</div>
-            <h3>contract</h3>
-            <p>CA will appear here the second it is confirmed.</p>
-            <span class="btn btn-ghost">coming soon</span>
-          </div>
-        </div>
+        </article>
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/mintchi.jpg" alt="Mintchi" /></div>
+            <h3>mintchi</h3>
+            <p>calm charts · snack duty</p>
+          </a>
+        </article>
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/bunhood.jpg" alt="Bunhood" /></div>
+            <h3>bunhood</h3>
+            <p>pink ears · sudden pumps</p>
+          </a>
+        </article>
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/leafomo.jpg" alt="Leafomo" /></div>
+            <h3>leafomo</h3>
+            <p>lucky leaf · quiet drama</p>
+          </a>
+        </article>
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/dumpli.jpg" alt="Dumpli" /></div>
+            <h3>dumpli</h3>
+            <p>warm fills · warm heart</p>
+          </a>
+        </article>
+        <article class="char-item">
+          <a href="#about">
+            <div class="char-bubble"><img src="assets/v2/chars/otterfeather.jpg" alt="Otterfeather" /></div>
+            <h3>otterfeather</h3>
+            <p>collects vibes only</p>
+          </a>
+        </article>
+      </div>
 
-        <div class="cta-band">
-          <h3>ready for pons?</h3>
-          <p>$ROBINKAWA · Robinhood Chain · CA Coming Soon</p>
-          <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">Go to Pons Launchpad ↗</a>
+      <!-- Cast guide art -->
+      <div class="art-block" style="margin-top: 28px;">
+        <img src="assets/v2/cast-guide.jpg" alt="Robinkawa cast guide" style="border-radius: 18px; border: 3px solid #111;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / Q&A -->
+  <section class="band-pink" id="about" style="padding-top: 8px;">
+    <div class="inner">
+      <h2 class="sec-title">about · q&amp;a</h2>
+      <p class="sec-sub">Everything small. Everything cute. Built for Robinhood Chain.</p>
+      <div class="qa">
+        <details open>
+          <summary>Am I saying it right?</summary>
+          <p><strong>Ro-bin-ka-wa</strong> — like “Robin” + “kawa”. Soft and round, just like the character.</p>
+        </details>
+        <details>
+          <summary>What kind of creature is Robinkawa?</summary>
+          <p>Something small and cute — a soft little hooded friend of Robinhood Chain. Not quite animal, not quite dumpling. Pure kawaii.</p>
+        </details>
+        <details>
+          <summary>Where does Robinkawa live?</summary>
+          <p>On <strong>Robinhood Chain</strong>, launching through <strong>Pons</strong>.</p>
+        </details>
+        <details>
+          <summary>What is the ticker?</summary>
+          <p><strong>$ROBINKAWA</strong>. Contract address is <strong>Coming Soon</strong> and will be posted here the moment it is live.</p>
+        </details>
+        <details>
+          <summary>Where do I buy?</summary>
+          <p>On <a href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener"><strong>Pons Launchpad</strong></a> — connect wallet and trade when $ROBINKAWA is live.</p>
+        </details>
+        <details>
+          <summary>Is there an X / Twitter?</summary>
+          <p>Coming soon — send the handle and we wire it into the social bar.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="band-pink" id="social" style="padding-top: 10px;">
+    <div class="inner center">
+      <h2 class="sec-title">social</h2>
+      <p class="sec-sub">Stay close for launch day.</p>
+      <div class="social-row">
+        <a class="social-btn pons" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">
+          <span class="ico">🚀</span>
+          pons
+          <small>launchpad · trade live</small>
+        </a>
+        <div class="social-btn x disabled" title="Waiting for X handle">
+          <span class="ico">𝕏</span>
+          x
+          <small>handle coming soon</small>
+        </div>
+        <div class="social-btn disabled">
+          <span class="ico">📄</span>
+          ca
+          <small>coming soon</small>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <img class="foot-art" src="assets/footer.jpg" alt="Bye from Robinkawa" />
-    <div class="foot-title">robinkawa official</div>
-    <div class="links">
+      <div class="launch-cta">
+        <h3>ready for pons?</h3>
+        <p>$ROBINKAWA · Robinhood Chain · CA Coming Soon</p>
+        <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">Go to Pons Launchpad ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img class="foot-mascot" src="assets/v2/mascot.jpg" alt="" />
+    <div class="foot-brand">robinkawa official</div>
+    <div class="foot-links">
       <a href="#home">home</a>
       <a href="#characters">characters</a>
       <a href="#about">about</a>
       <a href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">pons</a>
     </div>
-    <p class="fine">Something small and cute on Robinhood Chain. Not affiliated with Robinhood Markets, Chiikawa, or Pons Labs — community meme project inspired by soft character culture.</p>
+    <p class="fine">Something small and cute on Robinhood Chain. Fan / community meme project — not affiliated with Robinhood Markets, Chiikawa, or Pons Labs.</p>
   </footer>
 
+  <!-- Sticky buy bar -->
+  <div class="buybar">
+    <span class="hint">$ROBINKAWA · CA Coming Soon</span>
+    <a class="btn btn-green" href="https://www.ponsfamily.com/launchpad" target="_blank" rel="noopener">Buy on Pons</a>
+  </div>
+
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    mobileNav.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', () => mobileNav.classList.remove('open'));
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => drawer.classList.toggle('open'));
+    drawer.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => drawer.classList.remove('open'));
     });
   </script>
 </body>
